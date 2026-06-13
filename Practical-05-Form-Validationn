@@ -1,0 +1,43 @@
+<!DOCTYPE html>   
+<html>    
+<head>    
+<title>Form Validation</title>    
+</head>   
+<body>   
+<h2>User Form</h2>   
+Name: <input type="text" id="name"><br><br>
+Age: <input type="text" id="age"><br><br>
+
+<button onclick="validate()">Submit</button>
+
+<p id="result"></p>   
+
+<script>    
+    
+function validate() {    
+    
+let name = document.getElementById("name").value.trim();    
+let age = document.getElementById("age").value;    
+    
+if(name === "" || age === "") {    
+document.getElementById("result").innerHTML = "All fields are required";    
+return;    
+}    
+    
+// String manipulation    
+name = name.toUpperCase();    
+    
+// Type conversion    
+age = parseInt(age);    
+    
+if(age < 18) {    
+document.getElementById("result").innerHTML = "User is Minor";    
+} else {    
+document.getElementById("result").innerHTML = "Welcome " + name;    
+}    
+    
+}    
+    
+</script>
+</body>    
+</html>
